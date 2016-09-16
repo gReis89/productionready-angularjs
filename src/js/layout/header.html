@@ -49,16 +49,8 @@
       <li class="nav-item">
         <a class="nav-link"
           ui-sref-active="active"
-          ui-sref="app.article">
-          Article
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link"
-          ui-sref-active="active"
-          ui-sref="app.profile">
-          Profile
+          ui-sref="app.editor">
+          <i class="ion-compose"></i> New Article
         </a>
       </li>
 
@@ -70,8 +62,17 @@
       </a>
     </li>
 
+    <li class="nav-item">
+      <a class="nav-link"
+        ui-sref-active="active"
+        ui-sref="app.profile({username: $ctrl.currentUser.username})">
+        <img ng-src="{{$ctrl.currentUser.image}}" class="user-pic" />
+        {{$ctrl.currentUser.username}}
+      </a>
+    </li>
+
       <li class="nav-item">
-        <a class="nav-link"
+        <a class="nav-link" ng-hide="true"
           ui-sref-active="active"
           ui-sref="app.logout">
           Log Out

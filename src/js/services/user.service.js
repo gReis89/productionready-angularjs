@@ -28,6 +28,19 @@ export default class User {
         });
     }
 
+    update(fields) {
+        return this._$http({
+            method: 'PUT',
+            url: this._AppConstants.api + '/user',
+            data: {
+                user: fields
+            }
+        }).then((res) => {
+          this.current = res.data.user;
+          return res.data.user;
+        });
+    }
+
     logout() {
         this.current = null;
         this._JWT.destroy();
